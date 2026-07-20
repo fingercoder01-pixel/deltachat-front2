@@ -78,9 +78,9 @@
         </div>
     </div>
 
-    <div class="card mt-lg text-start" id="manual-card-default">
+    <div class="card card--wide mt-lg text-start" id="manual-card-default">
         <strong data-i18n="index_manual_title">Manual setup (if the button didn't work):</strong>
-        <ol>
+        <ol class="mt-md">
             <li data-i18n="index_manual_step1">In DeltaChat, select "Create new profile".</li>
             <li data-i18n="index_manual_step2">Then tap "Use Other Server".</li>
             <li data-i18n="index_manual_step3">Copy the text below and in the scan code section, tap "Paste from clipboard":</li>
@@ -88,9 +88,9 @@
         <div class="code-block" id="manual-link" onclick="copyText(this)"></div>
     </div>
 
-    <div class="card mt-lg text-start hidden" id="manual-card-ios">
+    <div class="card card--wide mt-lg text-start hidden" id="manual-card-ios">
         <strong data-i18n="index_ios_title">iPhone account creation guide:</strong>
-        <p class="mt-sm" data-i18n="index_ios_intro">First copy the link below, then follow these steps in DeltaChat:</p>
+        <p class="mt-md" data-i18n="index_ios_intro">First copy the link below, then follow these steps in DeltaChat:</p>
         <div class="code-block" id="manual-link-ios" onclick="copyText(this)"></div>
         <ol class="mt-md">
             <li>Use Other Server</li>
@@ -102,20 +102,20 @@
         </ol>
     </div>
 
-    <div class="card text-start" id="ios-card">
+    <div class="card card--wide mt-lg text-start">
         <strong data-i18n="index_ios_note_title">Note for iOS (iPhone) users:</strong>
         <p class="text-sm mt-sm" data-i18n-html="index_ios_note_text">iPhone users should copy the standard link above and during new account creation follow:</p>
-        <p class="text-sm mono" data-i18n="index_ios_note_path">new account > use other server > scan > paste</p>
+        <p class="text-sm mono mt-sm" data-i18n="index_ios_note_path">new account > use other server > scan > paste</p>
         <p class="text-sm mt-sm" data-i18n="index_ios_note_detail">Although clicking the login button may work on iOS, due to system limitations, the copy-paste method is recommended.</p>
     </div>
 
-    <div class="card card--centered mt-lg">
+    <div class="card card--centered card--wide mt-lg">
         <h3 data-i18n="index_share_title">Share Your ID</h3>
         <p class="mb-md" data-i18n="index_share_text">You can share your DeltaChat ID so others can contact you.</p>
         <a href="/share" class="btn btn--primary" data-i18n="index_share_btn">Share My ID</a>
     </div>
     {{else}}
-    <div class="card card--danger card--centered mt-lg">
+    <div class="card card--centered card--danger mt-lg">
         <h3 class="text-danger" data-i18n="index_reg_closed_title">Registration Closed</h3>
         <p data-i18n="index_reg_closed_text">New user registration on this server is temporarily disabled. Please use other servers.</p>
     </div>
@@ -248,8 +248,6 @@
                 document.getElementById('open-deltachat-btn').style.display = 'none';
                 document.getElementById('manual-card-default').style.display = 'none';
                 document.getElementById('manual-card-ios').classList.remove('hidden');
-                var iosCard = document.getElementById('ios-card');
-                if (iosCard) iosCard.style.display = 'none';
             }
             updateButtonStates();
             if (registrationOpen) {
